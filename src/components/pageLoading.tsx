@@ -1,32 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { gsap, Expo, CSSPlugin } from "gsap";
 import { useLoading } from "@/contexts/loadingContext";
 gsap.registerPlugin(CSSPlugin);
 
 export default function PageLoading(): React.ReactNode {
-  // return nothing if the loading animation has already seen before
   const { setLoading, loading } = useLoading();
-  if (!loading) return <></>;
-
   const [counter, setCounter] = useState(0);
 
-  useEffect(() => {
-    const count = setInterval(() => {
-      setCounter((counter: number) => {
-        if (counter < 100) {
-          return counter + 1;
-        } else {
-          clearInterval(count);
-          reveal();
-          return counter;
-        }
-      });
-    }, 10);
-  }, []);
-
-  const reveal = (): void => {
+  const reveal = useCallback((): void => {
     gsap
       .timeline({
         onComplete: () => {
@@ -59,7 +42,25 @@ export default function PageLoading(): React.ReactNode {
         ease: Expo.easeInOut,
       })
       .set(".page-loading", { display: "none" });
-  };
+  }, [setLoading]);
+
+  useEffect(() => {
+    if (!loading) return;
+    const count = setInterval(() => {
+      setCounter((prev) => {
+        if (prev < 100) {
+          return prev + 1;
+        } else {
+          clearInterval(count);
+          reveal();
+          return prev;
+        }
+      });
+    }, 10);
+    return () => clearInterval(count);
+  }, [loading, reveal]);
+
+  if (!loading) return <></>;
 
   return (
     <div className="fixed top-0 w-screen h-screen align-center bg-black z-50 page-loading">

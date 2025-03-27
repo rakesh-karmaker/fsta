@@ -2,8 +2,15 @@
 
 import React, { createContext, useContext, useState } from "react";
 
-const LoadingContext: React.Context<any> = createContext(null);
+// define the type for the loading context
+type LoadingContextType = {
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
+const LoadingContext = createContext<LoadingContextType | undefined>(undefined);
+
+// create the loading provider
 const LoadingProvider = ({
   children,
 }: {
@@ -17,6 +24,7 @@ const LoadingProvider = ({
   );
 };
 
+// create a custom hook to access the loading context
 const useLoading = () => {
   const context = useContext(LoadingContext);
   if (context === undefined) {
