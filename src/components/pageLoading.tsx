@@ -2,9 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import { gsap, Expo, CSSPlugin } from "gsap";
+import { useLoading } from "@/contexts/loadingContext";
 gsap.registerPlugin(CSSPlugin);
 
 export default function PageLoading(): React.ReactNode {
+  // return nothing if the loading animation has already seen before
+  const { setLoading, loading } = useLoading();
+  if (!loading) return <></>;
+
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
@@ -18,39 +23,39 @@ export default function PageLoading(): React.ReactNode {
           return counter;
         }
       });
-    }, 10); // decreased from 15ms for quicker counter
+    }, 10);
   }, []);
 
   const reveal = (): void => {
     gsap
       .timeline({
         onComplete: () => {
-          console.log("completed");
+          setLoading(false);
         },
       })
       .to(".follow", {
         width: "100%",
-        duration: 0.8, // reduced from 1.2s
-        delay: 0.4, // reduced from 0.7s
+        duration: 0.8,
+        delay: 0.4,
         ease: Expo.easeInOut,
       })
       .to(".hide", {
         opacity: 0,
-        duration: 0.2, // reduced from 0.3s
+        duration: 0.2,
       })
       .to(".hide", {
         display: "none",
-        duration: 0.2, // reduced from 0.3s
+        duration: 0.2,
       })
       .to(".follow", {
         height: "100%",
-        duration: 0.5, // reduced from 0.7s
-        delay: 0.3, // reduced from 0.5s
+        duration: 0.5,
+        delay: 0.3,
         ease: Expo.easeInOut,
       })
       .to(".page-loading", {
         x: "100%",
-        duration: 0.5, // reduced from 0.7s
+        duration: 0.5,
         ease: Expo.easeInOut,
       })
       .set(".page-loading", { display: "none" });
@@ -64,7 +69,7 @@ export default function PageLoading(): React.ReactNode {
           className="absolute left-0 bg-white transition-all duration-[0.4s] ease-out w-0 h-[2px] hide"
           style={{ width: `${counter}%` }}
         ></div>
-        <div className="absolute text-[130px] text-white font-[500] hide">
+        <div className="absolute text-[130px] max-lg:text-6xl text-white font-[500] hide">
           {counter}%
         </div>
       </div>
