@@ -1,7 +1,5 @@
-export default function About() {
-  return (
-    <div>
-      <h1>about</h1>
-    </div>
-  );
+import React from "react";
+
+export default function About(): React.ReactNode {
+  return <h1>hello</h1>;
 }

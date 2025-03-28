@@ -33,7 +33,7 @@ export default function Cursor(): React.ReactNode {
   }, []);
 
   useEffect(() => {
-    const addScaleEffect = (items: NodeListOf<Element>, scale = 4) => {
+    const addScaleEffect = (items: NodeListOf<Element>, scale = 2.5) => {
       items.forEach((tag) => {
         tag.addEventListener("mouseover", () => {
           gsap.to("#cursor", {
@@ -62,7 +62,7 @@ export default function Cursor(): React.ReactNode {
 
       addScaleEffect(aTag);
       addScaleEffect(btnTag);
-      addScaleEffect(clickTag, 2.5);
+      addScaleEffect(clickTag, 2);
     }
   }, []);
   return (
