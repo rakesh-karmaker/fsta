@@ -16,7 +16,7 @@ const LoadingProvider = ({
 }: {
   children: React.ReactNode;
 }): React.ReactNode => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   return (
     <LoadingContext.Provider value={{ loading, setLoading }}>
       {children}

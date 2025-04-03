@@ -4,7 +4,7 @@ import "./globals.css";
 import Cursor from "@/components/cursor";
 import PageLoading from "@/components/pageLoading";
 import { LoadingProvider } from "@/contexts/loadingContext";
-import Menu from "@/components/menu/menu";
+import Menu from "@/layouts/menu/menu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

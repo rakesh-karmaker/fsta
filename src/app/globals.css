@@ -16,6 +16,14 @@
   --gray: #313131;
   --orange: #ea763f;
   --red: #800020;
+
+  --max-width: 1650px;
+}
+
+@media screen and (max-width: 1750px) {
+  :root {
+    --max-width: 90vw !important;
+  }
 }
 
 * {
@@ -46,6 +54,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --breakpoint-xs: 25rem;
+  --container-mx: var(--max-width);
 }
 
 body {
