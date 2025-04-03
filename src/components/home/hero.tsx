@@ -1,5 +1,6 @@
 import React from "react";
 import HeroContainer from "../heroContainer";
+import { PrimaryBtnLink, SecondaryBtnLink } from "../btns";
 
 export default function Hero(): React.ReactNode {
   return (
@@ -11,7 +12,7 @@ export default function Hero(): React.ReactNode {
 
 function HeroInfo(): React.ReactNode {
   return (
-    <div className="flex flex-col gap-[1.5em] justify-center">
+    <div className="flex flex-col gap-[1.5em] items-center">
       <h1 className="text-[5.5em]/[115%] font-medium text-center">
         Unveil the{" "}
         <span className="text-orange inline">
@@ -24,6 +25,15 @@ function HeroInfo(): React.ReactNode {
         science and technology. You may discover an abundance of research papers
         and various materials on science and technology.
       </p>
+      <div className="flex gap-[1em]">
+        <PrimaryBtnLink href="/about">Learn more</PrimaryBtnLink>
+        <SecondaryBtnLink
+          href="https://www.facebook.com/fstaXoc"
+          isPageLink={false}
+        >
+          Join now
+        </SecondaryBtnLink>
+      </div>
     </div>
   );
 }

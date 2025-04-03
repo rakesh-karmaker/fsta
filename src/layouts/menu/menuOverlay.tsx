@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { HiOutlineXMark } from "react-icons/hi2";
 import { RxCross1 } from "react-icons/rx";
 
 type props = {
