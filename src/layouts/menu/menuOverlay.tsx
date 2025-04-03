@@ -11,7 +11,7 @@ export default function MenuOverlay({
   toggleMenu,
 }: props): React.ReactNode {
   return (
-    <div className="menu-overlay fixed top-0 left-0 w-screen min-h-screen h-full [padding:2em!important] bg-[#f48049] flex justify-center z-20 translate-y-[-100%] overflow-y-scroll">
+    <div className="menu-overlay fixed top-0 left-0 w-screen min-h-screen h-full [padding:2em!important] bg-[#f48049] flex justify-center z-[999] translate-y-[-100%] overflow-y-scroll">
       <div className="w-full h-full max-w-mx flex flex-col items-start gap-[2em]">
         <div className="menu-overlay-bar w-full flex justify-between">
           <div className="menu-logo">

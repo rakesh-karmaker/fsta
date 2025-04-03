@@ -4,15 +4,33 @@ import { PrimaryBtnLink, SecondaryBtnLink } from "../btns";
 
 export default function Hero(): React.ReactNode {
   return (
-    <HeroContainer image="white-dot.png" size="3" opacity="0.04">
+    <HeroContainer
+      image="white-dot.png"
+      size="2.9"
+      opacity="0.09"
+      className="grid [grid-template-rows:1fr_335px] gap-[1em] h-screen min-h-full"
+    >
       <HeroInfo />
+      <HeroCards />
     </HeroContainer>
+  );
+}
+
+function HeroCards(): React.ReactNode {
+  return (
+    <div className="justify-self-end flex-[1] flex items-end">
+      <div className="w-[295px] h-[335px] bg-white rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] translate-y-[7em] translate-x-[6em] rotate-[-15deg] z-10"></div>
+      <div className="w-[295px] h-[335px] bg-white rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] translate-y-[2em] translate-x-[4em] rotate-[-10deg] z-20"></div>
+      <div className="w-[295px] h-[335px] bg-white rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] z-30"></div>
+      <div className="w-[295px] h-[335px] bg-white rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] translate-y-[2em] translate-x-[-4em] rotate-[10deg] z-20"></div>
+      <div className="w-[295px] h-[335px] bg-white rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] translate-y-[7em] translate-x-[-6em] rotate-[15deg] z-10"></div>
+    </div>
   );
 }
 
 function HeroInfo(): React.ReactNode {
   return (
-    <div className="flex flex-col gap-[1.5em] items-center">
+    <div className="flex flex-col gap-[1.5em] items-center flex-[1] justify-center">
       <h1 className="text-[5.5em]/[115%] font-medium text-center">
         Unveil the{" "}
         <span className="text-orange inline">

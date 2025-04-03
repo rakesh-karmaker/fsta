@@ -59,7 +59,7 @@ export default function Menu(): React.ReactNode {
 
   return (
     <div className="menu-container text-[1.1em]" ref={container}>
-      <div className="menu-bar fixed top-0 left-0 w-screen [padding:1em_0em!important] flex justify-center z-10 bg-black">
+      <div className="menu-bar fixed top-0 left-0 w-screen [padding:1em_0em!important] flex justify-center z-[99] bg-black">
         <div className="w-full h-full flex justify-between items-center max-w-mx">
           <div className="menu-logo">
             <Link href={"/"} className="text-white cursor-pointer">

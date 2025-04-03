@@ -6,6 +6,7 @@ type HeroContainerProps = {
   image?: string;
   size?: string;
   opacity?: string;
+  className?: string;
 };
 
 export default function HeroContainer({
@@ -14,15 +15,18 @@ export default function HeroContainer({
   image,
   size,
   opacity,
+  className,
 }: HeroContainerProps): React.ReactNode {
+  const childrenClass: string = "z-10" + " " + className;
+
   return (
     <div
       className={
-        "w-screen h-full min-h-screen overflow-hidden flex justify-center items-center rounded-bl-[100] rounded-br-[100px]" +
+        "w-screen h-screen min-h-[815px] overflow-hidden flex justify-center items-center rounded-bl-[100] rounded-br-[100px]" +
         (isBlack ? " bg-black" : "")
       }
     >
-      <div className="z-10">{children}</div>
+      <div className={childrenClass}>{children}</div>
 
       {image && (
         <HeroImage
