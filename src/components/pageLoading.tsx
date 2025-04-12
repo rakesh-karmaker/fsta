@@ -63,7 +63,7 @@ export default function PageLoading(): React.ReactNode {
   if (!loading) return <></>;
 
   return (
-    <div className="fixed top-0 w-screen h-screen align-center bg-black z-50 page-loading">
+    <div className="fixed top-0 w-screen h-screen align-center bg-black z-[9999] page-loading">
       <div className="w-full h-full bg-black flex justify-center items-center">
         <div className="absolute bg-[#f48049] h-[2px] w-0 left-0 z-[99] follow"></div>
         <div

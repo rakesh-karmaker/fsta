@@ -22,11 +22,11 @@ export default function HeroContainer({
   return (
     <div
       className={
-        "w-screen h-screen min-h-[815px] overflow-hidden flex justify-center items-center rounded-bl-[100] rounded-br-[100px]" +
+        "relative w-screen h-full min-h-[calc(100vh_-_var(--nav-height))] overflow-hidden flex justify-center items-center rounded-bl-[100] rounded-br-[100px] max-lg:rounded-bl-[50px] max-lg:rounded-br-[50px] max-lg:h-full " +
         (isBlack ? " bg-black" : "")
       }
     >
-      <div className={childrenClass}>{children}</div>
+      <div className={childrenClass + " min-h-[calc(100vh_-_var(--nav-height))]"}>{children}</div>
 
       {image && (
         <HeroImage
@@ -49,7 +49,7 @@ function HeroImage({
 }: Omit<HeroContainerProps, "children">): React.ReactNode {
   return (
     <div
-      className="w-full h-full absolute top-0 left-0 z-[5]"
+      className="w-full h-full absolute top-0 left-0 z-[5] rounded-bl-[100] rounded-br-[100px] max-lg:rounded-bl-[50px] max-lg:rounded-br-[50px]"
       style={{
         backgroundImage: `radial-gradient(50% 50% at 50% 50%, ${
           isBlack ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 0)"

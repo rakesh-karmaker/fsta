@@ -69,7 +69,7 @@ export default function Cursor(): React.ReactNode {
     <>
       <div
         id="cursor"
-        className="fixed w-[20px] h-[20px] rounded-full bg-[#f48049] z-50 mix-blend-difference pointer-events-none top-0"
+        className="fixed w-[20px] h-[20px] rounded-full bg-[#f48049] z-[999] mix-blend-difference pointer-events-none top-0"
       ></div>
     </>
   );

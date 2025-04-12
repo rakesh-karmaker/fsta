@@ -13,12 +13,13 @@ export function PrimaryBtnLink({
   children,
   href,
   isPageLink = true,
+  className,
 }: Omit<BtnProps, "onClick">) {
   return (
     <BtnLink
       href={href}
       isPageLink={isPageLink}
-      className="bg-orange text-black"
+      className={"bg-orange text-black" + " " + className}
     >
       {children}
     </BtnLink>
@@ -29,12 +30,13 @@ export function SecondaryBtnLink({
   children,
   href,
   isPageLink = true,
+  className,
 }: Omit<BtnProps, "onClick">) {
   return (
     <BtnLink
       href={href}
       isPageLink={isPageLink}
-      className="bg-white text-black"
+      className={"bg-white text-black" + " " + className}
     >
       {children}
     </BtnLink>
