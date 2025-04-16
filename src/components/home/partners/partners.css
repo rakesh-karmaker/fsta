@@ -1,0 +1,18 @@
+@keyframes partners {
+    from {
+        transform: translateX(0%);
+    } 
+    to {
+        transform: translateX(-100%);  
+    }
+}
+
+.partners {
+    animation: partners 20s linear infinite;
+    padding: 0px 20px;
+}
+
+.partners-container:hover .partners {
+    animation-play-state: paused;
+}
+
