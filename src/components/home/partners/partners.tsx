@@ -6,7 +6,7 @@ import "./partners.css";
 export default function Partners(): React.ReactNode {
   return (
     <section className="flex flex-col items-center gap-[2.875em]">
-      <h2 className="text-[4em] text-black">
+      <h2 className="text-[4em]/[100%] text-black max-w-mx text-center max-md:text-[2.9em]">
         We have <span className="text-orange">Partnered</span> with
       </h2>
       <div className="partners-container w-screen overflow-hidden inline-flex flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_white_1028px,_white_calc(100%-1028px),transparent_100%)]">
@@ -28,8 +28,8 @@ function Logos() {
         <Image
           src={"/logos/" + partner.image}
           alt={partner.name}
-          width={200}
-          height={200}
+          width={150}
+          height={150}
           className="partner-image"
         />
       </li>

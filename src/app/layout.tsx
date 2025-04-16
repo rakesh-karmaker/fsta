@@ -5,6 +5,7 @@ import Cursor from "@/components/cursor";
 import PageLoading from "@/components/pageLoading";
 import { LoadingProvider } from "@/contexts/loadingContext";
 import Menu from "@/layouts/menu/menu";
+import Footer from "@/layouts/menu/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,6 +54,7 @@ export default function RootLayout({
           <PageLoading />
           <Menu />
           {children}
+          <Footer />
           <Cursor />
         </LoadingProvider>
       </body>

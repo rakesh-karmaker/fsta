@@ -9,6 +9,7 @@ import initPostsAnimations from "@/components/animations/postsAnimation";
 import { postList } from "@/services/data/postList";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const PostsSwiper = ({ designSliderRef, setIndex, index, completed }: {
   designSliderRef: React.MutableRefObject<typeof Swiper | null>,
@@ -16,7 +17,6 @@ const PostsSwiper = ({ designSliderRef, setIndex, index, completed }: {
   index: number,
   completed: boolean
 }) => {
-  const [maxWidth, setMaxWidth] = React.useState(1550);
   const [offset, setOffset] = React.useState(0);
 
   React.useEffect(() => {
@@ -27,7 +27,6 @@ const PostsSwiper = ({ designSliderRef, setIndex, index, completed }: {
           .getPropertyValue("--max-width") === "1650px"
           ? 1650
           : (90 * window.innerWidth) / 100;
-      setMaxWidth(newMaxWidth);
       setOffset((window.innerWidth - newMaxWidth) / 2);
     }
   }, []);
@@ -65,11 +64,11 @@ const PostsSwiper = ({ designSliderRef, setIndex, index, completed }: {
         <SwiperSlide key={post.title} className="post-slide">
           <div className="post">
             <Link href={post.link}>
-              <img
+              <Image
                 src={"/posts/" + post.image}
                 alt={post.title}
-                height="100%"
-                width="100%"
+                height={600}
+                width={600}
               />
             </Link>
             <p className="post-info">

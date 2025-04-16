@@ -1,3 +1,4 @@
+import SocialIcons from "@/components/ui/socialIcons/socialIcons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,27 +7,34 @@ export default function Footer(): React.ReactNode {
   return (
     <footer className="w-screen flex flex-col items-center gap-[3.75em] bg-black [padding:2.875em_0em_!important]">
       <FooterUpper />
+      <FooterLower />
     </footer>
   );
 }
 
 function FooterUpper(): React.ReactNode {
   return (
-    <div className="flex justify-between gap-9">
+    <div className="flex justify-between gap-9 w-full max-w-mx max-md:flex-col">
       <div className="flex flex-col gap-4">
-        <Image src={"/logo.png"} alt="FSTA logo" width={100} height={100} />
+        <Image
+          src={"/logo.png"}
+          alt="FSTA logo"
+          width={100}
+          height={100}
+          className="w-[3.625em] h-[3.625em]"
+        />
         <div className="flex flex-col gap-5">
-          <h3 className="text-[1.8125em] font-medium">
+          <h3 className="text-[2em]/[140%] font-medium max-w-[25ch] max-md:text-[1.7em]">
             Frontier Science And Tech Alliance - FSTA
           </h3>
-          <p className="text-white-80">
+          <p className="text-white-80 max-w-[50ch] text-[1.2em] max-md:text-[1em]">
             Where we publicly focus on news, facts, and current events related
             to science and technology
           </p>
         </div>
       </div>
-      <div className="w-full max-w-[28.125em] gap-5 justify-between">
-        <div className="flex flex-col gap-[2.5625em]">
+      <div className="w-full max-w-[28.125em] max-lg:w-auto flex gap-15 justify-between max-md:gap-9 max-md:flex-wrap">
+        <div className="flex flex-col gap-[1.6em]">
           <p className="text-[1.75em] font-bold">Pages</p>
           <div className="flex flex-col gap-3">
             <Link
@@ -55,7 +63,7 @@ function FooterUpper(): React.ReactNode {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-[2.5625em]">
+        <div className="flex flex-col gap-[1.6em]">
           <p className="text-[1.75em] font-bold">Contact us</p>
           <div className="flex flex-col gap-3">
             <p className="flex flex-col gap-2.5">
@@ -79,6 +87,25 @@ function FooterUpper(): React.ReactNode {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function FooterLower(): React.ReactNode {
+  const year = new Date().getFullYear();
+
+  return (
+    <div className="w-full max-w-mx flex justify-between items-center gap-9 [padding-top:2.875em!important] border-t-1 border-white-60 max-sm:flex-wrap">
+      <p className="text-white-80">
+        © {year} FSTA - All rights reserves - Designed by{" "}
+        <Link
+          href={"https://rakesh-karmaker.netlify.app/"}
+          className="text-white-60 duration-500 hover:text-white"
+        >
+          Rakesh
+        </Link>
+      </p>
+      <SocialIcons />
     </div>
   );
 }

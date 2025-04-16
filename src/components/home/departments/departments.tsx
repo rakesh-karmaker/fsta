@@ -136,7 +136,9 @@ const Department = ({
       className={"department" + (index === elemIndex ? " active" : "")}
       onClick={() => {
         setIndex(elemIndex);
-        !canSnap && setCanSnap(true);
+        if (!canSnap) {
+          setCanSnap(true);
+        }
       }}
     >
       <div className="department-info" id={department.id.toString()}>
@@ -193,10 +195,13 @@ const ProgressBar = ({
       setWidth(0);
       setTimeout(() => {
         setIndex(index === departments.length - 1 ? 0 : index + 1);
-        !canSnap && setCanSnap(true);
+        if (!canSnap) {
+          setCanSnap(true);
+        }
       }, 0);
     };
 
+    const currentRef = progressBarRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -219,17 +224,17 @@ const ProgressBar = ({
       { threshold: 0.1 }
     );
 
-    if (progressBarRef.current) {
-      observer.observe(progressBarRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
       clearInterval(progressInterval);
-      if (progressBarRef.current) {
-        observer.unobserve(progressBarRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, [index, elemIndex]);
+  }, [index, elemIndex, canSnap, setCanSnap, setIndex]);
 
   return (
     <div className="progress-bars" ref={progressBarRef}>

@@ -2,7 +2,7 @@ import React from "react";
 
 type HeroContainerProps = {
   children: React.ReactNode;
-  isBlack?: Boolean;
+  isBlack?: boolean;
   image?: string;
   size?: string;
   opacity?: string;

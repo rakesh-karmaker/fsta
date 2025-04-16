@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -20,11 +20,15 @@ const Scrambler = ({
   const [inView, setInView] = useState(false);
   const letters = "abcdefghijklmnopqrstuvwxyz";
 
+  
+
+  const { setCompleted } = rest;
+  
   useEffect(() => {
     if (!inView || !canRun) return;
     let iterations = 0;
     const interval = setInterval(() => {
-      setCurrentText((prev) => {
+      setCurrentText(() => {
         let newText = "";
         for (let i = 0; i < iterations; i++) {
           if (i < iterations - 1) {
@@ -39,14 +43,16 @@ const Scrambler = ({
       if (iterations >= text.length) {
         clearInterval(interval);
         setCurrentText(text);
-        rest?.setCompleted && rest.setCompleted(true);
+        if (setCompleted) {
+          setCompleted(true);
+        }
       } else {
         iterations++;
       }
     }, speed);
 
     return () => clearInterval(interval);
-  }, [text, speed, inView, canRun]);
+  }, [text, speed, inView, canRun, setCompleted]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,7 +73,14 @@ const Scrambler = ({
     return () => observer.disconnect();
   }, [scramblerRef, canRun]);
 
-  return <span ref={scramblerRef} className={color === "black" ? "text-black" : "text-white"}>{currentText}</span>;
+  return (
+    <span
+      ref={scramblerRef}
+      className={color === "black" ? "text-black" : "text-white"}
+    >
+      {currentText}
+    </span>
+  );
 };
 
 export default Scrambler;

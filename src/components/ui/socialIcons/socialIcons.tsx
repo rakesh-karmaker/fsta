@@ -16,7 +16,7 @@ const SocialIcons = ({ bg = "black" }) => {
             className="icon"
             style={{
               backgroundColor:
-                bg === "black" ? "var(--black)" : "var(--light-black)",
+                bg === "black" ? "var(--black)" : "var(--black-70)",
             }}
             title={icon.name}
           >
