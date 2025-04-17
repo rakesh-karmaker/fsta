@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative py-[6em] px-[2em]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative py-[6em] px-[2em] max-w-screen overflow-x-hidden`}
       >
         <LoadingProvider>
           <PageLoading />

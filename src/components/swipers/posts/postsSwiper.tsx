@@ -69,6 +69,7 @@ const PostsSwiper = ({ designSliderRef, setIndex, index, completed }: {
                 alt={post.title}
                 height={600}
                 width={600}
+                className="w-full"
               />
             </Link>
             <p className="post-info">

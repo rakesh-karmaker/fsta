@@ -22,7 +22,7 @@ export default function HeroContainer({
   return (
     <div
       className={
-        "relative w-screen h-full min-h-[calc(100vh_-_var(--nav-height))] overflow-hidden flex justify-center items-center rounded-bl-[100] rounded-br-[100px] max-lg:rounded-bl-[50px] max-lg:rounded-br-[50px] max-lg:h-full " +
+        "hero-container relative w-screen h-full min-h-[calc(100vh_-_var(--nav-height))] overflow-hidden flex justify-center items-center rounded-bl-[100] rounded-br-[100px] max-lg:rounded-bl-[50px] max-lg:rounded-br-[50px] max-lg:h-full " +
         (isBlack ? " bg-black" : "")
       }
     >
