@@ -5,7 +5,7 @@ import Cursor from "@/components/cursor";
 import PageLoading from "@/components/pageLoading";
 import { LoadingProvider } from "@/contexts/loadingContext";
 import Menu from "@/layouts/menu/menu";
-import Footer from "@/layouts/menu/footer";
+import Footer from "@/layouts/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

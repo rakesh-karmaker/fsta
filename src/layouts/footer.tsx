@@ -1,9 +1,18 @@
+"use client"
+
+import initFooterAnimation from "@/components/animations/footerAnimation";
 import SocialIcons from "@/components/ui/socialIcons/socialIcons";
+import { useLoading } from "@/contexts/loadingContext";
+import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export default function Footer(): React.ReactNode {
+  const { loading } = useLoading();
+  useGSAP(() => {
+    initFooterAnimation(loading);
+  }, [loading]);
   return (
     <footer className="w-screen flex flex-col items-center gap-[3.75em] bg-black [padding:2.875em_0em_!important]">
       <FooterUpper />
@@ -14,7 +23,7 @@ export default function Footer(): React.ReactNode {
 
 function FooterUpper(): React.ReactNode {
   return (
-    <div className="flex justify-between gap-9 w-full max-w-mx max-md:flex-col">
+    <div className="footer-upper flex justify-between gap-9 w-full max-w-mx max-md:flex-col">
       <div className="flex flex-col gap-4">
         <Image
           src={"/logo.png"}
@@ -95,7 +104,7 @@ function FooterLower(): React.ReactNode {
   const year = new Date().getFullYear();
 
   return (
-    <div className="w-full max-w-mx flex justify-between items-center gap-9 [padding-top:2.875em!important] border-t-1 border-white-60 max-sm:flex-wrap">
+    <div className="footer-lower w-full max-w-mx flex justify-between items-center gap-9 [padding-top:2.875em!important] border-t-1 border-white-60 max-sm:flex-wrap">
       <p className="text-white-80">
         © {year} FSTA - All rights reserves - Designed by{" "}
         <Link

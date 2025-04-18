@@ -4,17 +4,27 @@ import React, { useEffect, useRef, useState } from "react";
 import { PrimaryBtnLink, SecondaryBtnLink } from "../../btns";
 import { DepartmentType, departments } from "@/services/data/departments";
 import { useGSAP } from "@gsap/react";
-import { initDepartmentImageAnimations } from "../../animations/departmentAnimation";
+import {
+  initDepartmentAnimations,
+  initDepartmentImageAnimations,
+} from "../../animations/departmentAnimation";
 import Image from "next/image";
-import "./departments.css"
+import "./departments.css";
 import Banner from "../banner/banner";
+import { useLoading } from "@/contexts/loadingContext";
 
 export default function Departments(): React.ReactNode {
   const [index, setIndex] = useState<number>(0);
+  const { loading } = useLoading();
+  useGSAP(() => {
+    initDepartmentAnimations(loading);
+  }, [loading]);
   return (
-    <section className="bg-black [padding-top:max(5vw,_75px)!important] [padding-bottom:max(8vw,_100px)!important] flex flex-col gap-[6em] max-md:gap-[3.5em] justify-center items-center">
+    <section className="bg-black [padding-top:max(6vw,_75px)!important] [padding-bottom:max(8vw,_100px)!important] flex flex-col gap-[6em] max-md:gap-[3.5em] justify-center items-center">
       <div className="w-full max-w-[var(--max-width)] flex flex-col gap-[3.0625em]">
-        <h2 className="text-[3.775em]/[120%] max-w-[20ch] max-md:text-[2.9em]">Unveil the Five Core Departments of Our Club</h2>
+        <h2 className="dpt-heading text-[3.775em]/[120%] max-w-[20ch] max-md:text-[2.9em]">
+          Unveil the Five Core Departments of Our Club
+        </h2>
         <div className="flex gap-[7.1875em]">
           <article className="flex flex-col justify-between gap-[9.0625em] max-w-[835px] max-lg:max-w-full">
             <DepartmentsUpper />
@@ -30,7 +40,7 @@ export default function Departments(): React.ReactNode {
 
 function DepartmentsUpper(): React.ReactNode {
   return (
-    <div className="flex flex-col gap-[1.75em]">
+    <div className="dpt-upper flex flex-col gap-[1.75em]">
       <p className="text-white-80 text-[1.1em]/[190%] max-md:text-[1em]">
         Unveiling our five core departments, each driving innovation in science.
         From research to hands-on discovery, explore physics, chemistry,
@@ -109,7 +119,9 @@ const DepartmentImg = ({ index }: { index: number }) => {
       ref={imgRef}
       src={imageSrc}
       alt={departments[index].title}
-      className={"department-img w-full rounded-xl object-cover bg-center min-w-[425px] max-lg:hidden"}
+      className={
+        "department-img w-full rounded-xl object-cover bg-center min-w-[425px] max-lg:hidden"
+      }
       height={700}
       width={740}
     />

@@ -5,6 +5,8 @@ import { keyPoints } from "@/services/data/keyPoints";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function KeyPoints(): React.ReactNode {
   const { loading } = useLoading();
@@ -19,12 +21,10 @@ export default function KeyPoints(): React.ReactNode {
     gsap.to(".key-points > div", {
       autoAlpha: 1,
       y: 0,
-      stagger: 0.2,
+      stagger: 0.1,
       ease: "power3.out",
-      duration: 0.8,
-      delay: 0.5,
       scrollTrigger: {
-        trigger: ".key-points",
+        trigger: ".key-points > div",
       },
     });
   }, [loading]);
