@@ -22,7 +22,7 @@ export default function Departments(): React.ReactNode {
   return (
     <section className="bg-black [padding-top:max(6vw,_75px)!important] [padding-bottom:max(8vw,_100px)!important] flex flex-col gap-[6em] max-md:gap-[3.5em] justify-center items-center">
       <div className="w-full max-w-[var(--max-width)] flex flex-col gap-[3.0625em]">
-        <h2 className="dpt-heading text-[3.775em]/[120%] max-w-[20ch] max-md:text-[2.9em]">
+        <h2 className="dpt-heading text-[3.775em]/[120%] font-medium max-w-[20ch] max-md:text-[2.9em]">
           Unveil the Five Core Departments of Our Club
         </h2>
         <div className="flex gap-[7.1875em]">

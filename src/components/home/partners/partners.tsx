@@ -11,20 +11,20 @@ import gsap from "gsap";
 export default function Partners(): React.ReactNode {
   const { loading } = useLoading();
   useGSAP(() => {
-    gsap.set(".partners-container > *", { autoAlpha: 0, y: 30 });
+    gsap.set(".partners-section > *", { autoAlpha: 0, y: 30 });
     if (loading) return null;
-    gsap.to(".partners-container > *", {
+    gsap.to(".partners-section > *", {
       autoAlpha: 1,
       y: 0,
       stagger: 0.2,
       scrollTrigger: {
-        trigger: ".partners-container",
+        trigger: ".partners-section",
       },
     });
   }, [loading]);
   return (
-    <section className="partners-container flex flex-col items-center gap-[2.875em]">
-      <h2 className="text-[4em]/[100%] text-black max-w-mx text-center max-md:text-[2.9em]">
+    <section className="partners-section flex flex-col items-center gap-[2.875em]">
+      <h2 className="text-[4em]/[100%] font-medium text-black max-w-mx text-center max-md:text-[2.9em]">
         We have <span className="text-orange">Partnered</span> with
       </h2>
       <div className="partners-container w-screen overflow-hidden inline-flex flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_white_1028px,_white_calc(100%-1028px),transparent_100%)]">

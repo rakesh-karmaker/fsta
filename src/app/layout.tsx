@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Cursor from "@/components/cursor";
 import PageLoading from "@/components/pageLoading";
 import { LoadingProvider } from "@/contexts/loadingContext";
 import Menu from "@/layouts/menu/menu";
 import Footer from "@/layouts/footer";
+import { Poppins } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+})
 
 export const metadata: Metadata = {
   title: "Frontier science and tech alliance",
@@ -48,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative py-[6em] px-[2em] max-w-screen overflow-x-hidden`}
+        className={`${poppins.className} antialiased relative py-[6em] px-[2em] max-w-screen overflow-x-hidden`}
       >
         <LoadingProvider>
           <PageLoading />
