@@ -5,10 +5,10 @@ export default function Opportunities(): React.ReactNode {
   return (
     <section className="w-full flex justify-center items-center [padding-top:max(6vw,_75px)!important] [padding-bottom:max(6vw,_75px)!important] bg-[#FBFDFF]">
       <div className="w-full max-w-mx flex flex-col gap-[4.4375em] items-center">
-        <h2 className="text-[4.4375em]/[130%] text-black font-medium max-w-[20ch] text-center">
+        <h2 className="text-[4.4375em]/[130%] text-black font-medium max-w-[20ch] text-center max-lg:text-[3.5em] max-md:text-[2.5em]">
           Explore the Opportunities We Offer
         </h2>
-        <div className="w-full max-w-mx grid grid-cols-2 gap-12">
+        <div className="w-full max-w-mx grid grid-cols-2 gap-12 max-md:grid-cols-1">
           {opportunities.map((opportunity) => {
             return (
               <Opportunity
