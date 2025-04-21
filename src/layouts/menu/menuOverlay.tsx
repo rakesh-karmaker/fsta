@@ -1,3 +1,6 @@
+"use client";
+
+import { useLoading } from "@/contexts/loadingContext";
 import Link from "next/link";
 import { RxCross1 } from "react-icons/rx";
 
@@ -10,6 +13,15 @@ export default function MenuOverlay({
   menuLinks,
   toggleMenu,
 }: props): React.ReactNode {
+  const {setLoading} = useLoading();
+
+  const handleNavClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }
+
   return (
     <div className="menu-overlay fixed top-0 left-0 w-screen min-h-screen h-full [padding:2em!important] bg-[#f48049] flex justify-center z-[999] translate-y-[-100%] overflow-y-scroll">
       <div className="w-full h-full max-w-mx flex flex-col items-start gap-[2em]">
@@ -36,6 +48,7 @@ export default function MenuOverlay({
                 onClick={toggleMenu}
               >
                 <Link
+                  onClick={handleNavClick}
                   href={link.url}
                   className="menu-link text-black text-[80px]/[85%] font-[400] [letter-spacing:-0.02em] max-sm:text-[60px]/[85%] max-sm:[letter-spacing:-0.01em] max-xs:text-[47px]/[85%]"
                 >

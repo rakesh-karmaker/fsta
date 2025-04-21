@@ -6,14 +6,14 @@ import { useLoading } from "@/contexts/loadingContext";
 gsap.registerPlugin(CSSPlugin);
 
 export default function PageLoading(): React.ReactNode {
-  const { setLoading, loading } = useLoading();
+  const { isFirstLoading, setIsFirstLoading } = useLoading();
   const [counter, setCounter] = useState(0);
 
   const reveal = useCallback((): void => {
     gsap
       .timeline({
         onComplete: () => {
-          setLoading(false);
+          setIsFirstLoading(false);
         },
       })
       .to(".follow", {
@@ -42,10 +42,10 @@ export default function PageLoading(): React.ReactNode {
         ease: Expo.easeInOut,
       })
       .set(".page-loading", { display: "none" });
-  }, [setLoading]);
+  }, [setIsFirstLoading]);
 
   useEffect(() => {
-    if (!loading) return;
+    if (!isFirstLoading) return;
     const count = setInterval(() => {
       setCounter((prev) => {
         if (prev < 100) {
@@ -58,9 +58,9 @@ export default function PageLoading(): React.ReactNode {
       });
     }, 10);
     return () => clearInterval(count);
-  }, [loading, reveal]);
+  }, [isFirstLoading, reveal]);
 
-  if (!loading) return <></>;
+  if (!isFirstLoading) return <></>;
 
   return (
     <div className="fixed top-0 w-screen h-screen align-center bg-black z-[9999] page-loading">

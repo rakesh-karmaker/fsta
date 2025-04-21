@@ -9,7 +9,8 @@ export type OpportunityType = {
   subtitle: string;
   text: string;
   icon: React.ReactNode;
-  color: string; 
+  textColor: string;
+  bgColor: string 
 }
 
 export const opportunities: OpportunityType[] = [
@@ -18,27 +19,31 @@ export const opportunities: OpportunityType[] = [
     subtitle: "Innovative Learning",
     text: "Engage in interactive experiments, workshops, and projects that bring science and technology to life, allowing you to learn by doing.",
     icon: <TbMicroscope />,
-    color: "blue",
+    textColor: "text-blue",
+    bgColor: "bg-blue"
   },
   {
     title: "Competitions & Fests",
     subtitle: "Exciting Events",
     text: "Participate in thrilling events like olympiads, hackathons, and science fests, pushing your limits while having fun and showcasing your skills.",
     icon: <MdOutlineCelebration />,
-    color: "orange",
+    textColor: "text-orange",
+    bgColor: "bg-orange"
   },
   {
     title: "Think & Solve",
     subtitle: "Skill Development",
     text: "Enhance your critical thinking, creativity, and problem-solving abilities through real-world applications and hands-on challenges.",
     icon: <LuBrain />,
-    color: "red",
+    textColor: "text-red",
+    bgColor: "bg-red"
   },
   {
     title: "Collaborative Community",
     subtitle: "Innovative Learning",
     text: "Join a supportive network of like-minded individuals, share ideas, and collaborate on groundbreaking projects that make an impact.",
     icon: <FaHandsHelping />,
-    color: "gray",
+    textColor: "text-gray",
+    bgColor: "bg-gray"
   },
 ];
