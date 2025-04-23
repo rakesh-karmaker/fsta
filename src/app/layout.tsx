@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     type: "website",
     description:
       'Dive into the wonders of science with our Science Club! As Carl Sagan said, "The good thing about science is that it is true whether or not you believe in it." Explore various scientific disciplines, conduct experiments, and engage in exciting activities. Joining our club enhances your scientific knowledge, sharpens critical thinking, and sparks a lifelong passion for science.',
-    url: "https://mscsc.netlify.app",
+    url: "https://fsta-next.netlify.app",
     images: [
       {
-        url: "https://mscsc.netlify.app/link-img.jpg",
+        url: "https://fsta-next.netlify.app/link-img.jpg",
         width: 200,
         height: 200,
         alt: "Image of Frontier science and tech alliance site",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     description:
       'Dive into the wonders of science with our Science Club! As Carl Sagan said, "The good thing about science is that it is true whether or not you believe in it." Explore various scientific disciplines, conduct experiments, and engage in exciting activities. Joining our club enhances your scientific knowledge, sharpens critical thinking, and sparks a lifelong passion for science.',
     creator: "Rakesh Karmaker",
-    images: ["https://mscsc.netlify.app/link-img.jpg"],
-    site: "https://mscsc.netlify.app"
+    images: ["https://fsta-next.netlify.app/link-img.jpg"],
+    site: "https://fsta-next.netlify.app"
   },
 };
 

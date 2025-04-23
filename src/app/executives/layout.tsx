@@ -2,11 +2,11 @@ export const metadata = {
   title: "FSTA - Executives",
   openGraph: {
     title: "FSTA - Executives",
-    url: "https://mscsc.netlify.app/executives",
+    url: "https://fsta-next.netlify.app/executives",
   },
   twitter: {
     title: "FSTA - Executives",
-    site: "https://mscsc.netlify.app/executives",
+    site: "https://fsta-next.netlify.app/executives",
   },
 };
 
