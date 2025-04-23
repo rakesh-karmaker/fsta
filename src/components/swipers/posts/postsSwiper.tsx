@@ -59,6 +59,7 @@ const PostsSwiper = ({ designSliderRef, setIndex, index, completed }: {
       slidesOffsetAfter={
         typeof window !== 'undefined' && window.innerWidth > 950 && window.innerWidth < 1250 ? 50 : 0
       }
+      autoHeight={true}
     >
       {postList.map((post) => (
         <SwiperSlide key={post.description} className="post-slide">

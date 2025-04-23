@@ -5,9 +5,9 @@
 }
 
 .posts-swiper {
-  width: 100%; /* Ensure the swiper takes the full width of its container */
+  width: 100%;
   display: flex;
-  justify-content: center; /* Center the slides */
+  justify-content: center;
 }
 
 .post-slide {
