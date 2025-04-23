@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     "bd club",
   ],
 
+  verification: {
+    google: "WuHsQ-mp86N5c3Bkmbce7fzBsgW3wN1JiuwT9o9FPTA",
+  },
+
   openGraph: {
     siteName: "FSTA - Frontier science and tech alliance",
     title: "Frontier science and tech alliance",
