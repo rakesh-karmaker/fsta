@@ -63,7 +63,7 @@ function HeroInfo(): React.ReactNode {
 
 function HeroCards(): React.ReactNode {
   const defaultStyle: string =
-    "w-[295px] h-[335px] max-2xl:w-[250px] max-2xl:h-[290px] max-xl:w-[200px] max-xl:h-[240px] max-lg:w-[180px] max-lg:h-[220px] bg-white rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] max-lg:translate-0 max-lg:rotate-0 max-lg:rounded-[7px] max-g:hidden";
+    "w-[295px] h-[335px] max-2xl:w-[250px] max-2xl:h-[290px] max-xl:w-[200px] max-xl:h-[240px] max-lg:w-[180px] max-lg:h-[220px] rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] max-lg:translate-0 max-lg:rotate-0 max-lg:rounded-[7px] max-g:hidden";
 
   return (
     <div
@@ -77,6 +77,11 @@ function HeroCards(): React.ReactNode {
           " " +
           "translate-y-[7em] translate-x-[6em] rotate-[-15deg] z-10"
         }
+        style={{
+          backgroundImage: "url('/hero-1.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       ></div>
       <div
         className={
@@ -84,14 +89,31 @@ function HeroCards(): React.ReactNode {
           " " +
           "translate-y-[2em] translate-x-[4em] rotate-[-10deg] z-20"
         }
+        style={{
+          backgroundImage: "url('/hero-2.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       ></div>
-      <div className={defaultStyle + " " + "z-30"}></div>
+      <div
+        className={defaultStyle + " " + "z-30"}
+        style={{
+          backgroundImage: "url('/hero-3.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></div>
       <div
         className={
           defaultStyle +
           " " +
           "translate-y-[2em] translate-x-[-4em] rotate-[10deg] z-20"
         }
+        style={{
+          backgroundImage: "url('/hero-4.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       ></div>
       <div
         className={
@@ -99,6 +121,11 @@ function HeroCards(): React.ReactNode {
           " " +
           "translate-y-[7em] translate-x-[-6em] rotate-[15deg] z-10"
         }
+        style={{
+          backgroundImage: "url('/hero-5.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       ></div>
     </div>
   );

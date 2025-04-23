@@ -32,7 +32,7 @@ export default function initHeroAnimation(loading: boolean) {
       ease: "power1.inOut",
     })
     .to(".hero-container", {
-      borderRadius: "0 0 75px 75px",
+      borderRadius: "0 0 65px 65px",
       duration: 0.5,
       ease: "power1.inOut",
     });

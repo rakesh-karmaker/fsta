@@ -42,7 +42,11 @@ const ContactInfo = ({
           setCompleted={setComplete}
         />
       </h2>
-      <p className="contact-text">
+      <p
+        className={
+          "contact-text " + (color === "white" ? "text-white" : "text-black-80")
+        }
+      >
         It is very important for us to keep in touch with you, so we are always
         ready to answer any question that interests you.
       </p>

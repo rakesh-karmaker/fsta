@@ -23,7 +23,7 @@ export default function AboutFSTA(): React.ReactNode {
             </span>
             <span>
               We bring together like-minded individuals who share a love for
-              discovery, experimentation, and problem-solving. Whether you're
+              discovery, experimentation, and problem-solving. Whether you&apos;re
               fascinated by the mysteries of the universe or eager to build the
               next technological breakthrough, FSTA provides the resources and
               opportunities to fuel your passion.

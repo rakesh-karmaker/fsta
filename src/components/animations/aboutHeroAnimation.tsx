@@ -22,7 +22,7 @@ export default function initAboutHeroAnimation(loading: boolean) {
       duration: 0.5,
     })
     .to(".hero-container", {
-      borderRadius: "0 0 75px 75px",
+      borderRadius: "0 0 65px 65px",
       duration: 0.5,
       ease: "power1.inOut",
     });

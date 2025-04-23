@@ -24,7 +24,7 @@ export default function Executives(): React.ReactNode {
         trigger: ".executives > h2",
       },
     });
-    gsap.utils.toArray(".executive-card").forEach((card, i) => {
+    gsap.utils.toArray(".executive-card").forEach((card) => {
       gsap.fromTo(
         card as Element,
         {

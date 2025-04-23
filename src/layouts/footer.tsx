@@ -87,10 +87,10 @@ function FooterUpper(): React.ReactNode {
             <p className="flex flex-col gap-2.5">
               <span className="text-[1.375em]">Phone</span>
               <Link
-                href={"tel:+8801756170957"}
+                href={"tel:+880886010238"}
                 className="text-white-80 duration-500 hover:text-white"
               >
-                (880) 1756-170957
+                (880) 1886-010238
               </Link>
             </p>
           </div>
