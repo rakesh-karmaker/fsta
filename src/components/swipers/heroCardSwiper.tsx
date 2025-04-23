@@ -25,7 +25,14 @@ export default function HeroCardSwiper({ className }: { className: string }) {
           .map((_, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="w-[295px] h-[335px] max-2xl:w-[250px] max-2xl:h-[290px] max-xl:w-[200px] max-xl:h-[240px] max-lg:w-[160px] max-lg:h-[200px] bg-white rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] max-lg:translate-0 max-lg:rotate-0 max-md:max-h-[150px] max-md:w-[120px]" />
+                <div
+                  className="w-[295px] h-[335px] max-2xl:w-[250px] max-2xl:h-[290px] max-xl:w-[200px] max-xl:h-[240px] max-lg:w-[160px] max-lg:h-[200px] rounded-t-[7px] shadow-[0px_0px_14.3px_rgba(0,_0,_0,_0.25)] max-lg:translate-0 max-lg:rotate-0 max-md:max-h-[150px] max-md:w-[120px]"
+                  style={{
+                    backgroundImage: `url(${images[i]})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
               </SwiperSlide>
             );
           })}
@@ -33,3 +40,11 @@ export default function HeroCardSwiper({ className }: { className: string }) {
     </div>
   );
 }
+
+const images = [
+  "/hero-1.png",
+  "/hero-2.png",
+  "/hero-3.png",
+  "/hero-4.png",
+  "/hero-5.png",
+];
