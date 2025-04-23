@@ -18,8 +18,8 @@ const LoadingProvider = ({
 }: {
   children: React.ReactNode;
 }): React.ReactNode => {
-  const [loading, setLoading] = useState(false);
-  const [isFirstLoading, setIsFirstLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [isFirstLoading, setIsFirstLoading] = useState(true);
 
   useEffect(() => {
     // set loading to true on the first render
