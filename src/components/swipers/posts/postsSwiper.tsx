@@ -61,7 +61,7 @@ const PostsSwiper = ({ designSliderRef, setIndex, index, completed }: {
       }
     >
       {postList.map((post) => (
-        <SwiperSlide key={post.title} className="post-slide">
+        <SwiperSlide key={post.description} className="post-slide">
           <div className="post">
             <Link href={post.link}>
               <Image

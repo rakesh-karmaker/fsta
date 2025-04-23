@@ -66,7 +66,7 @@ const PostsHeader = ({
     <div className="posts-header">
       <h2>
         <Scrambler
-          text={"Creative posts Made for My Clients"}
+          text={"Our Latest Posts"}
           speed={30}
           canRun={!loading}
           setCompleted={setCompleted}
