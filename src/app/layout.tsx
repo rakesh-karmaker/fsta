@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     url: "https://fsta-next.netlify.app",
     images: [
       {
-        url: "https://fsta-next.netlify.app/link-img.jpg",
+        url: "https://fsta-next.netlify.app/link-image.png",
         width: 200,
         height: 200,
         alt: "Image of Frontier science and tech alliance site",
