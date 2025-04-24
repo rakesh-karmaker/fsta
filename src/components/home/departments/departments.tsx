@@ -47,7 +47,7 @@ function DepartmentsUpper(): React.ReactNode {
         biology, astronomy, and engineering—where passion meets progress.
       </p>
       <div className="flex gap-[1.5em] flex-wrap">
-        <PrimaryBtnLink href="/departments" isPageLink={false}>
+        <PrimaryBtnLink href="https://www.facebook.com/fstaXoc" isPageLink={false}>
           Join now
         </PrimaryBtnLink>
 
